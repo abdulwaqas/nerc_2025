@@ -94,6 +94,21 @@ void left(int leftSpeed = 150, int rightSpeed = 150)
     analogWrite(RR.rev_pin, rightSpeed);
 }
 
+void left2(int S_FL, int S_RL, int S_FR, int S_RR)
+{
+    analogWrite(FL.fwd_pin, 0);
+    analogWrite(FL.rev_pin, S_FL);
+
+    analogWrite(FR.fwd_pin, S_FR);
+    analogWrite(FR.rev_pin, 0);
+
+    analogWrite(RL.fwd_pin, S_RL);
+    analogWrite(RL.rev_pin, 0);
+
+    analogWrite(RR.fwd_pin, 0);
+    analogWrite(RR.rev_pin, S_RR);
+}
+
 void halt()
 {
     noInterrupts();
@@ -116,7 +131,7 @@ void stripCountStraight(int stripsToMove)
     int stripCount = 0;
     while (true)
     {
-        int16_t sensorOnLine = readSingleSensor(LEFT.channel) < 25000 ? 1 : 0;
+        int sensorOnLine = analogRead(LEFT_SENSOR) < 25000 ? 1 : 0;
         unsigned long currentMillis = millis();
 
         if (sensorOnLine && !prevLine)
@@ -150,7 +165,7 @@ void stripCountGay(int stripsToMove)
     int stripCount = 0;
     while (true)
     {
-        int16_t sensorOnLine = readSingleSensor(FRONT.channel) < 25000 ? 1 : 0;
+        int sensorOnLine = analogRead(FRONT_SENSOR) < 25000 ? 1 : 0;
         unsigned long currentMillis = millis();
 
         if (sensorOnLine && !prevLine)
