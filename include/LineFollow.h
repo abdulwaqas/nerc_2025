@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _LINEFOLLOW_H
-#define _LINEFOLLOW_H
+#ifndef _LINEFOLLOW_H_
+#define _LINEFOLLOW_H_
 
 #include <Arduino.h>
 #include "Sensors.h"

@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _MOTORS_H
-#define _MOTORS_H
+#ifndef _MOTORS_H_
+#define _MOTORS_H_
 
 #include <Arduino.h>
 #include "Sensors.h"
