@@ -15,9 +15,9 @@ void initServos() {
     Wire.begin();
 }
 
-void moveServo(String servo, String pos) {
+void moveServo(String servo, int pos) {
     Wire.beginTransmission(4); // transmit to device #4
-    Wire.write((servo + " " + pos).c_str());       // sends five bytes
+    Wire.write((servo + " " + String(pos)).c_str());       // sends five bytes
     Wire.endTransmission();    // stop transmitting
 }
 

@@ -39,6 +39,36 @@ void linefollowFront()
     forward(leftSpeed, rightSpeed);
 }
 
+void linefollowFrontWithEncoder(int ticksToMove)
+{
+    flEncoder.ticks = 0;
+    float Kp = 0.09;
+    float Ki = 0.001;
+    while (flEncoder.ticks < ticksToMove)
+    {
+
+        // Sensor and error
+        int sensorValue = analogRead(FRONT_SENSOR);
+        int error = targetValFront - sensorValue;
+
+        // Integrate error (avoid windup by limiting)
+        integral += error;
+        integral = constrain(integral, -1000, 1000); // anti-windup
+
+        int correction = (Kp * error) + (Ki * integral);
+        Serial.println(correction);
+
+        int leftSpeed = baseSpeed - correction;
+        int rightSpeed = baseSpeed + correction;
+
+        // Limit PWM values between 0 and 255
+        leftSpeed = constrain(leftSpeed, 0, 255);
+        rightSpeed = constrain(rightSpeed, 0, 255);
+
+        forward(leftSpeed, rightSpeed);
+    }
+}
+
 void linefollowLeft()
 {
     float Kp = 0.2;
@@ -71,12 +101,12 @@ void linefollowLeft()
     // Limit PWM values between 0 and 255
     // leftSpeed = constrain(leftSpeed, 130, 170);
     // rightSpeed = constrain(rightSpeed, 130, 170);
-    
+
     S_FL = constrain(S_FL, 50, 90);
     S_FR = constrain(S_FR, 50, 90);
     S_RL = constrain(S_RL, 50, 90);
     S_RR = constrain(S_RR, 50, 90);
-    
+
     Serial.print(S_FL);
     Serial.print(" ");
     Serial.print(S_FR);
