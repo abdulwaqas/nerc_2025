@@ -9,17 +9,15 @@
 #define FRONT_SERVO "FT"
 #define LEFT_SERVO "LT"
 #define RIGHT_SERVO "RT"
+#define BASE_SERVO "BS"
 
 void initServos() {
     Wire.begin();
 }
 
-void moveServo(String servo, int pos) {
-    Serial.println(servo);
+void moveServo(String servo, String pos) {
     Wire.beginTransmission(4); // transmit to device #4
-    Wire.write((servo + " ").c_str());       // sends five bytes
-    Wire.write(pos);             // sends one byte
-    Wire.write('\n');
+    Wire.write((servo + " " + pos).c_str());       // sends five bytes
     Wire.endTransmission();    // stop transmitting
 }
 

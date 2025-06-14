@@ -29,15 +29,11 @@ void setup()
 
 void loop()
 {
-    moveServo(FRONT_SERVO, 90);
-    delay(5000);
-    moveServo(FRONT_SERVO, 0);
-    delay(5000);
     // forward();
     // right(80, 80);
     // left(80, 85);
     // linefollowFront();
     // linefollowLeft();
     // printSensorVals();
-    delay(100);
+    // delay(100);
 }

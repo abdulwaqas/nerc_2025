@@ -10,12 +10,12 @@ typedef struct
 {
     uint8_t fwd_pin;
     uint8_t rev_pin;
-} motor;
+} Motor;
 
-motor FL = {fwd_pin : 3, rev_pin : 2};
-motor FR = {fwd_pin : 4, rev_pin : 5};
-motor RL = {fwd_pin : 6, rev_pin : 7};
-motor RR = {fwd_pin : 9, rev_pin : 8};
+Motor FL = {fwd_pin : 3, rev_pin : 2};
+Motor FR = {fwd_pin : 4, rev_pin : 5};
+Motor RL = {fwd_pin : 6, rev_pin : 7};
+Motor RR = {fwd_pin : 9, rev_pin : 8};
 
 bool prevLine = false;
 
