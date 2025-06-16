@@ -86,6 +86,21 @@ void right(int leftSpeed = 150, int rightSpeed = 150)
     analogWrite(RR.rev_pin, 0);
 }
 
+void rightInverse(int leftSpeed = 150, int rightSpeed = 150)
+{
+    analogWrite(FL.fwd_pin, leftSpeed);
+    analogWrite(FL.rev_pin, 0);
+
+    analogWrite(FR.fwd_pin, 0);
+    analogWrite(FR.rev_pin, rightSpeed);
+
+    analogWrite(RL.fwd_pin, leftSpeed);
+    analogWrite(RL.rev_pin, 0);
+
+    analogWrite(RR.fwd_pin, 0);
+    analogWrite(RR.rev_pin, rightSpeed);
+}
+
 void left(int leftSpeed = 150, int rightSpeed = 150)
 {
     analogWrite(FL.fwd_pin, 0);
@@ -101,19 +116,19 @@ void left(int leftSpeed = 150, int rightSpeed = 150)
     analogWrite(RR.rev_pin, rightSpeed);
 }
 
-void left2(int S_FL, int S_RL, int S_FR, int S_RR)
+void leftInverse(int leftSpeed = 150, int rightSpeed = 150)
 {
     analogWrite(FL.fwd_pin, 0);
-    analogWrite(FL.rev_pin, S_FL);
+    analogWrite(FL.rev_pin, leftSpeed);
 
-    analogWrite(FR.fwd_pin, S_FR);
+    analogWrite(FR.fwd_pin, rightSpeed);
     analogWrite(FR.rev_pin, 0);
 
-    analogWrite(RL.fwd_pin, S_RL);
-    analogWrite(RL.rev_pin, 0);
+    analogWrite(RL.fwd_pin, 0);
+    analogWrite(RL.rev_pin, leftSpeed);
 
-    analogWrite(RR.fwd_pin, 0);
-    analogWrite(RR.rev_pin, S_RR);
+    analogWrite(RR.fwd_pin, rightSpeed);
+    analogWrite(RR.rev_pin, 0);
 }
 
 void halt()
@@ -143,75 +158,6 @@ void encoderMove(uint32_t ticksToMove)
         // delay(1);
     }
     halt();
-}
-
-void stripCountStraight(int stripsToMove)
-{
-    int stripCount = 0;
-    while (true)
-    {
-        int sensorOnLine = analogRead(LEFT_SENSOR) < 700 ? 1 : 0;
-        unsigned long currentMillis = millis();
-
-        if (sensorOnLine && !prevLine)
-        {
-            stripCount++;
-            prevLine = true;
-            previousMillis = currentMillis;
-        }
-        else if (currentMillis - previousMillis > intervalMillis)
-        {
-            prevLine = false;
-        }
-
-        if (stripCount < stripsToMove)
-        {
-            delay(1);
-            // linefollow();
-            // Serial.print("Strip# ");
-            // Serial.println(stripCount);
-        }
-        else
-        {
-            Serial.println("Halt!");
-            // halt();
-            return;
-        }
-    }
-}
-
-void stripCountGay(int stripsToMove)
-{
-    int stripCount = 0;
-    while (true)
-    {
-        int sensorOnLine = analogRead(BACK_SENSOR) < 700 ? 1 : 0;
-        unsigned long currentMillis = millis();
-
-        if (sensorOnLine && !prevLine)
-        {
-            stripCount++;
-            prevLine = true;
-            previousMillis = currentMillis;
-        }
-        else if (currentMillis - previousMillis > intervalMillis)
-        {
-            prevLine = false;
-        }
-
-        if (stripCount < stripsToMove)
-        {
-            delay(1);
-            // linefollow();
-            // Serial.print("Strip# ");
-            // Serial.println(stripCount);
-        }
-        else
-        {
-            // halt();
-            return;
-        }
-    }
 }
 
 #endif //_MOTORS_H

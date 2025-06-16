@@ -14,37 +14,64 @@ void setup()
     initServos();
 
     Serial.println("Code Running...");
+    // moveServo(FRONT_SERVO, 0);
+    // moveServo(LEFT_SERVO, 0);
+    // moveServo(RIGHT_SERVO, 0);
 
-    backward(80, 80);
-    stripCountStraight(1);
-    backward();
-    stripCountStraight(2);
-    backward(80, 80);
-    stripCountStraight(1);
-    halt();
+
+    lineFollowStrips(4, 'b');
     delay(1000);
-    right(80, 80);
+    lineFollow('r', 100);
+    delay(200);
+    lineFollowStrips(4, 'r', 100);
+    delay(200);
+    lineFollowEncoder(600, 'b');
     delay(500);
-    stripCountGay(4);
-    halt();
-    delay(500);
-    backward();
-    encoderMove(200);
-    delay(100);
     moveServo(LEFT_SERVO, 0);
+    sendCommand("FL LT OPEN");
     delay(500);
-    linefollowFront();
-    encoderMove(500);
+    lineFollowEncoder(850, 'f', 80);
     delay(500);
-    moveServo(LEFT_SERVO, 90);
+    sendCommand("FL LT CLOSE");
+    delay(300);
+    moveServo(LEFT_SERVO, 70);
     delay(1000);
+    moveServo(BASE_SERVO, BASE_090-5);
+    delay(500);
+    moveServo(FRONT_SERVO, 0);
+    moveServo(RIGHT_SERVO, 0);
+    delay(500);
+    lineFollowStrips(2, 'f', 80);
+    delay(500);
+    lineFollowEncoder(400, 'f', 80);
+    delay(500);
+    moveServo(FRONT_SERVO, 70);
+    delay(500);
+    lineFollowStrips(1, 'b', 80);
+    delay(500);
+    lineFollowEncoder(500, 'l', 80);
+    delay(100);
+    lineFollowEncoder(750, 'r', 80);
+    delay(500);
+    moveServo(RIGHT_SERVO, 70);
+    delay(100);
+    lineFollowEncoder(400, 'l', 80);
+    delay(500);
+    lineFollow('f');
+    delay(500);
+    lineFollowStrips(2, 'f');
+    delay(500);
 }
 
 void loop()
 {
-    // linefollowFront();
-    // linefollowLeft();
-    // printSensorVals();
+    // sendCommand("FL LT OPEN");
+    // delay(1000);
+    // sendCommand("FL LT CLOSE");
+    // delay(1000);
+    // printSensorVals(rightSensors);
     // printEncoders();
+    // lineFollow('f'); // 'f' for front, 'b' for back, 'l' for left, 'r' for right
+    // lineFollowV2('f'); // 'f' for front, 'b' for back, 'l' for left, 'r' for right
     // delay(100);
 }
