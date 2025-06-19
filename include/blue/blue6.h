@@ -1,18 +1,17 @@
-#ifndef _BLUE1_H_
-#define _BLUE1_H_
+#ifndef _BLUE6_H_
+#define _BLUE6_H_
 
 #include <Arduino.h>
 #include "LineFollow.h"
 #include "ServoControl.h"
 
-void blue1()
+void blue6()
 {
     lineFollowStrips(4, 'b');
     delay(1000);
     rigthTurnEncoder(780);
     lineFollowEncoder(400, 'f');
-    delay(200);
-    lineFollowStrips(5, 'f');
+    lineFollowStrips(3, 'f');
     delay(200);
     sendCommand("FL LT OPEN");
     delay(100);
@@ -31,17 +30,15 @@ void blue1()
     delay(1000);
     sendCommand("FL FT OPEN");
     moveServo(FRONT_SERVO, 0);
-    delay(500);
-    lineFollowStrips(1, 'f');
-    delay(500);
-    leftTurnEncoder(780);
-    delay(500);
-    lineFollowEncoder(400, 'f');
-    lineFollowStrips(1, 'f');
+    lineFollowStrips(2, 'f');
     delay(500);
     rigthTurnEncoder(780);
-    lineFollowEncoder(400, 'f', 80);
     delay(500);
+    lineFollowEncoder(400, 'f');
+    lineFollowStrips(1);
+    delay(500);
+    lineFollowEncoder(320);
+    delay(300);
     sendCommand("FL FT CLOSE");
     delay(300);
     moveServo(FRONT_SERVO, 70);
@@ -51,17 +48,12 @@ void blue1()
     delay(1000);
     sendCommand("FL RT OPEN");
     moveServo(RIGHT_SERVO, 0);
-    delay(500);
-    lineFollowStrips(1, 'f');
+    lineFollowStrips(2, 'b');
     delay(500);
     leftTurnEncoder(780);
     delay(500);
-    lineFollowEncoder(400, 'f');
-    lineFollowStrips(1, 'f');
-    delay(500);
-    rigthTurnEncoder(780);
-    lineFollowEncoder(350, 'f', 80);
-    delay(500);
+    lineFollowEncoder(320, 'f');
+    delay(300);
     sendCommand("FL RT CLOSE");
     delay(300);
     moveServo(RIGHT_SERVO, 70);
@@ -198,4 +190,4 @@ void blue1()
     lineFollowEncoder(1900);
 }
 
-#endif //_BLUE11_H_
+#endif //_BLUE6_H_
