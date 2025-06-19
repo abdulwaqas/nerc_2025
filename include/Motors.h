@@ -101,6 +101,21 @@ void rightInverse(int leftSpeed = 150, int rightSpeed = 150)
     analogWrite(RR.rev_pin, rightSpeed);
 }
 
+void rightFreeze(int leftSpeed = 0, int rightSpeed = 150)
+{
+    analogWrite(FL.fwd_pin, leftSpeed);
+    analogWrite(FL.rev_pin, 0);
+
+    analogWrite(FR.fwd_pin, 0);
+    analogWrite(FR.rev_pin, rightSpeed);
+
+    analogWrite(RL.fwd_pin, leftSpeed);
+    analogWrite(RL.rev_pin, 0);
+
+    analogWrite(RR.fwd_pin, 0);
+    analogWrite(RR.rev_pin, rightSpeed);
+}
+
 void left(int leftSpeed = 150, int rightSpeed = 150)
 {
     analogWrite(FL.fwd_pin, 0);
@@ -131,6 +146,21 @@ void leftInverse(int leftSpeed = 150, int rightSpeed = 150)
     analogWrite(RR.rev_pin, 0);
 }
 
+void leftFreeze(int leftSpeed = 150, int rightSpeed = 0)
+{
+    analogWrite(FL.fwd_pin, 0);
+    analogWrite(FL.rev_pin, leftSpeed);
+
+    analogWrite(FR.fwd_pin, rightSpeed);
+    analogWrite(FR.rev_pin, 0);
+
+    analogWrite(RL.fwd_pin, 0);
+    analogWrite(RL.rev_pin, leftSpeed);
+
+    analogWrite(RR.fwd_pin, rightSpeed);
+    analogWrite(RR.rev_pin, 0);
+}
+
 void halt()
 {
     noInterrupts();
@@ -146,6 +176,28 @@ void halt()
     analogWrite(RR.fwd_pin, 0);
     analogWrite(RR.rev_pin, 0);
     interrupts();
+}
+
+void leftTurnEncoder(uint32_t ticksToMove)
+{
+    flEncoder.ticks = 0; 
+    while (flEncoder.ticks < ticksToMove)
+    {
+        leftInverse();  
+        interrupts();   
+    }
+    halt();
+}
+
+void rigthTurnEncoder(uint32_t ticksToMove)
+{
+    flEncoder.ticks = 0;  
+    while (flEncoder.ticks < ticksToMove)
+    {
+        rightInverse();  
+        interrupts();       
+    }
+    halt();
 }
 
 void encoderMove(uint32_t ticksToMove)
