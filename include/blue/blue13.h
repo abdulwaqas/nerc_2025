@@ -20,7 +20,7 @@ void blue13()
     sendCommand("FL LT OPEN");
     delay(100);
     moveServo(LEFT_SERVO, 0);
-    delay(300);
+    delay(500);
     leftTurnEncoder(780);
     delay(200);
     lineFollowEncoder(300, 'f', 80);
