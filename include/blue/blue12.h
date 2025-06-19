@@ -1,15 +1,15 @@
-// 1 0 1
+// 1 0 0
 // 0 0 0
-// 0 0 1
+// 1 0 1
 
-#ifndef _BLUE11_H_
-#define _BLUE11_H_
+#ifndef _BLUE12_H_
+#define _BLUE12_H_
 
 #include <Arduino.h>
 #include "LineFollow.h"
 #include "ServoControl.h"
 
-void blue11()
+void blue12()
 {
     lineFollowStrips(4, 'b');
     delay(1000);
@@ -30,10 +30,24 @@ void blue11()
     moveServo(LEFT_SERVO, 70);
     delay(500);
 
-    moveServo(BASE_SERVO, BASE_090 - 5);
+    moveServo(BASE_SERVO, BASE_090);
     delay(1000);
     sendCommand("FL FT OPEN");
     moveServo(FRONT_SERVO, 0);
+    delay(500);
+    lineFollowStrips(2, 'f');
+    delay(500);
+    lineFollowEncoder(350, 'f', 80);
+    delay(500);
+    sendCommand("FL FT CLOSE");
+    delay(300);
+    moveServo(FRONT_SERVO, 70);
+    delay(500);
+
+    moveServo(BASE_SERVO, BASE_180);
+    delay(1000);
+    sendCommand("FL RT OPEN");
+    moveServo(RIGHT_SERVO, 0);
     delay(500);
     lineFollowStrips(1, 'f');
     delay(300);
@@ -43,39 +57,29 @@ void blue11()
     delay(500);
     lineFollowEncoder(350, 'f', 80);
     delay(500);
-    sendCommand("FL FT CLOSE");
-    delay(300);
-    moveServo(FRONT_SERVO, 70);
-    delay(500);
-    lineFollowStrips(1, 'f');
-
-    moveServo(BASE_SERVO, BASE_180);
-    delay(1000);
-    moveServo(RIGHT_SERVO, 0);
-    delay(300);
-    leftTurnEncoder(780);
-    lineFollowEncoder(400);
-    lineFollowStrips(1);
-    lineFollowEncoder(350, 'f', 80);
-    delay(100);
     sendCommand("FL RT CLOSE");
     delay(300);
     moveServo(RIGHT_SERVO, 70);
-    delay(500);
-
-    lineFollowStrips(2, 'f');
+    delay(500);    
+    lineFollowStrips(1, 'f');
+    delay(300);
+    
+    leftTurnEncoder(780);
+    delay(100);
+    lineFollowEncoder(400, 'f');
+    lineFollowStrips(1, 'f');
     delay(300);
     leftTurnEncoder(780);
-    delay(300);
+
 
     RedServo redServo = getRedServo();
     if (redServo == RedServo::SERVO_LEFT)
     {
         moveServo(BASE_SERVO, BASE_000);
         delay(1000);
-        moveServo(LEFT_SERVO, 0);
         delay(500);
         lineFollowEncoder(400, 'f');
+        moveServo(LEFT_SERVO, 10);
         lineFollowStrips(2, 'f');
         delay(500);
         lineFollowEncoder(600, 'f');
@@ -161,7 +165,7 @@ void blue11()
         delay(100);
         sendCommand("FL RT OPEN");
         delay(300);
-
+        
         lineFollowStrips(5, 'b');
         moveServo(RIGHT_SERVO, 70);
         delay(500);
@@ -195,4 +199,4 @@ void blue11()
     lineFollowEncoder(1900);
 }
 
-#endif //_BLUE10_H_
+#endif //_BLUE12_H_
