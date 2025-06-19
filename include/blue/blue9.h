@@ -1,6 +1,6 @@
 // 0 1 0
-// 0 0 0
 // 1 0 1
+// 0 0 0
 
 #ifndef _BLUE9_H_
 #define _BLUE9_H_
@@ -9,7 +9,7 @@
 #include "LineFollow.h"
 #include "ServoControl.h"
 
-void blue11()
+void blue9()
 {
     lineFollowStrips(4, 'b');
     delay(1000);
