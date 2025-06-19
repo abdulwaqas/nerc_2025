@@ -1,3 +1,7 @@
+// 1 1 1
+// 0 0 0
+// 0 0 0
+
 #ifndef _BLUE2_H_
 #define _BLUE2_H_
 

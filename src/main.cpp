@@ -12,7 +12,8 @@
 #include "blue/blue5.h"
 #include "blue/blue6.h"
 #include "blue/blue7.h"
-#include "blue/blue11.h"
+#include "blue/blue8.h"
+#include "blue/blue9.h"
 
 // TODO: update rightTurnEncoder function name after NERC
 
@@ -32,7 +33,7 @@ void setup()
     // rigthTurnEncoder(780);
     // leftTurnEncoder(780);
 
-    blue7();
+    blue8();
 }
 
 void loop()
