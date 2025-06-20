@@ -13,10 +13,6 @@
 
 void red4()
 {
-    lineFollowStrips(4, 'b');
-    delay(1000);
-    leftTurnEncoder(780);
-    lineFollowEncoder(400, 'f');
     lineFollowStrips(4, 'f');
     delay(200);
     sendCommand("FL LT OPEN");

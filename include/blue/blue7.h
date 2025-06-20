@@ -11,10 +11,6 @@
 
 void blue7()
 {
-    lineFollowStrips(4, 'b');
-    delay(1000);
-    rigthTurnEncoder(780);
-    lineFollowEncoder(400, 'f');
     lineFollowStrips(5, 'f');
     delay(200);
     sendCommand("FL LT OPEN");

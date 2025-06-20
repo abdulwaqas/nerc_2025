@@ -11,10 +11,6 @@
 
 void blue17()
 {
-    lineFollowStrips(4, 'b');
-    delay(1000);
-    rigthTurnEncoder(780);
-    lineFollowEncoder(400, 'f');
     lineFollowStrips(4, 'f');
     delay(200);
     sendCommand("FL LT OPEN");
@@ -35,8 +31,8 @@ void blue17()
 
     sendCommand("FL RT OPEN");
     moveServo(RIGHT_SERVO, 0);
-    delay(500);
-    lineFollowStrips(1, 'b');
+    delay(800);
+    lineFollowStrips(2, 'b');
     lineFollowEncoder(350, 'b', 80);
     delay(500);
     sendCommand("FL RT CLOSE");
@@ -60,7 +56,7 @@ void blue17()
     moveServo(FRONT_SERVO, 70);
     delay(500);
 
-    lineFollowStrips(2, 'f');
+    lineFollowStrips(3, 'f');
     delay(300);
     leftTurnEncoder(780);
     delay(300);
@@ -70,7 +66,7 @@ void blue17()
     {
         moveServo(BASE_SERVO, BASE_000);
         delay(1000);
-        moveServo(LEFT_SERVO, 0);
+        moveServo(LEFT_SERVO, 15);
         delay(500);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
@@ -111,7 +107,7 @@ void blue17()
     {
         moveServo(BASE_SERVO, BASE_090);
         delay(1000);
-        moveServo(FRONT_SERVO, 0);
+        moveServo(FRONT_SERVO, 15);
         delay(500);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
@@ -150,7 +146,9 @@ void blue17()
     }
     else if (redServo == RedServo::SERVO_RGHT)
     {
-        moveServo(RIGHT_SERVO, 0);
+        moveServo(BASE_SERVO, BASE_180);
+        delay(800);
+        moveServo(RIGHT_SERVO, 20);
         delay(500);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
@@ -182,7 +180,7 @@ void blue17()
         delay(100);
         moveServo(FRONT_SERVO, 0);
         delay(500);
-        sendCommand("FL LT OPEN");
+        sendCommand("FL FT OPEN");
         delay(300);
     }
 
