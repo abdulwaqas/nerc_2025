@@ -31,8 +31,9 @@ void red16()
 
     sendCommand("FL RT OPEN");
     moveServo(RIGHT_SERVO, 0);
-    delay(500);
+    delay(700);
     lineFollowStrips(1, 'b');
+    delay(300);
     lineFollowEncoder(350, 'b', 80);
     delay(500);
     sendCommand("FL RT CLOSE");
@@ -68,7 +69,7 @@ void red16()
     {
         moveServo(BASE_SERVO, BASE_000);
         delay(1000);
-        moveServo(LEFT_SERVO, 0);
+        moveServo(LEFT_SERVO, 15);
         delay(500);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
@@ -109,7 +110,7 @@ void red16()
     {
         moveServo(BASE_SERVO, BASE_090);
         delay(1000);
-        moveServo(FRONT_SERVO, 0);
+        moveServo(FRONT_SERVO, 15);
         delay(500);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
@@ -148,7 +149,9 @@ void red16()
     }
     else if (redServo == RedServo::SERVO_RGHT)
     {
-        moveServo(RIGHT_SERVO, 0);
+        moveServo(BASE_SERVO, BASE_180);
+        delay(1000);
+        moveServo(RIGHT_SERVO, 15);
         delay(500);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
