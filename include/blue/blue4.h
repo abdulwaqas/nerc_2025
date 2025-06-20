@@ -63,7 +63,6 @@ void blue4()
     delay(200);
     leftTurnEncoder(780);
     lineFollowEncoder(400);
-
     lineFollowStrips(2, 'f');
     delay(300);
     leftTurnEncoder(780);
