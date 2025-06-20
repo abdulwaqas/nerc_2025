@@ -19,6 +19,30 @@
 #include "blue/blue12.h"
 #include "blue/blue13.h"
 
+
+
+#include "red/red1.h"
+#include "red/red2.h"
+#include "red/red3.h"
+#include "red/red4.h"
+#include "red/red5.h"
+#include "red/red6.h"
+#include "red/red7.h"
+#include "red/red8.h"
+#include "red/red9.h"
+#include "red/red10.h"
+#include "red/red11.h"
+#include "red/red12.h"
+#include "red/red13.h"
+#include "red/red14.h"
+#include "red/red15.h"
+#include "red/red16.h"
+#include "red/red17.h"
+#include "red/red18.h"
+#include "red/red19.h"
+#include "red/red20.h"
+
+
 // TODO: update rightTurnEncoder function name after NERC
 
 void setup()
