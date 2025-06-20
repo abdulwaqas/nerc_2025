@@ -18,7 +18,13 @@
 #include "blue/blue11.h"
 #include "blue/blue12.h"
 #include "blue/blue13.h"
-
+#include "blue/blue14.h"
+#include "blue/blue15.h"
+#include "blue/blue16.h"
+#include "blue/blue17.h"
+#include "blue/blue18.h"
+#include "blue/blue19.h"
+#include "blue/blue20.h"
 
 
 #include "red/red1.h"
