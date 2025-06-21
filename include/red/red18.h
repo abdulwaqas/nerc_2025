@@ -11,16 +11,17 @@
 
 void red18()
 {
-    lineFollowStrips(4, 'f');
+    lineFollowStrips(4, 'f', 170);
     delay(200);
     sendCommand("FL LT OPEN");
     delay(100);
     moveServo(LEFT_SERVO, 0);
     delay(300);
     rigthTurnEncoder(780);
+    lineFollowEncoder(400);
     lineFollowStrips(1, 'f');
     delay(200);
-    lineFollowEncoder(300, 'f', 80);
+    lineFollowEncoder(320, 'f', 80);
     delay(500);
     sendCommand("FL LT CLOSE");
     delay(300);
@@ -28,7 +29,7 @@ void red18()
     delay(500);
 
     moveServo(BASE_SERVO, BASE_090);
-    delay(1000);
+    delay(800);
     sendCommand("FL FT OPEN");
     moveServo(FRONT_SERVO, 0);
     delay(500);
@@ -36,7 +37,7 @@ void red18()
     delay(300);
     leftTurnEncoder(780);
     delay(500);
-    lineFollowEncoder(350, 'f', 80);
+    lineFollowEncoder(330, 'f', 80);
     delay(500);
     sendCommand("FL FT CLOSE");
     delay(300);
@@ -44,12 +45,12 @@ void red18()
     delay(500);
 
     moveServo(BASE_SERVO, BASE_000);
-    delay(1000);
+    delay(800);
     sendCommand("FL RT OPEN");
     moveServo(RIGHT_SERVO, 0);
     lineFollowStrips(1, 'b');
     delay(500);
-    lineFollowEncoder(350, 'b', 80);
+    lineFollowEncoder(330, 'b', 80);
     delay(500);
     sendCommand("FL RT CLOSE");
     delay(300);
@@ -66,18 +67,18 @@ void red18()
         moveServo(BASE_SERVO, BASE_000);
         delay(1000);
         lineFollowEncoder(400, 'f');
-        moveServo(LEFT_SERVO, 10);
+        moveServo(LEFT_SERVO, 23);
         lineFollowEncoder(400);
         lineFollowStrips(1, 'f');
         delay(300);
         rigthTurnEncoder(780);
         delay(300);
-        lineFollowEncoder(600, 'f');
+        lineFollowEncoder(550, 'f');
         delay(100);
         sendCommand("FL LT OPEN");
         delay(300);
 
-        lineFollowStrips(5, 'b');
+        lineFollowStrips(5, 'b', 170);
         lineFollowEncoder(400, 'b');
         moveServo(RIGHT_SERVO, 40);
         delay(500);
@@ -90,16 +91,14 @@ void red18()
         rigthTurnEncoder(780);
 
         lineFollowEncoder(400, 'f');
-        moveServo(BASE_SERVO, BASE_090 - 2);
-        lineFollowStrips(4, 'f');
+        moveServo(BASE_SERVO, BASE_090);
+        lineFollowStrips(4, 'f', 170);
         delay(300);
         rigthTurnEncoder(780);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
         delay(300);
-        // lineFollowEncoder(300, 'b');
-        // delay(300);
-        lineFollowEncoder(350, 'f', 80);
+        lineFollowEncoder(330, 'f', 80);
         delay(100);
         moveServo(FRONT_SERVO, 0);
         delay(800);
@@ -110,7 +109,7 @@ void red18()
     {
         moveServo(BASE_SERVO, BASE_090);
         delay(1000);
-        moveServo(FRONT_SERVO, 15);
+        moveServo(FRONT_SERVO, 23);
         delay(500);
         lineFollowEncoder(400);
         lineFollowStrips(1, 'f');
@@ -121,7 +120,7 @@ void red18()
         delay(100);
         sendCommand("FL FT OPEN");
         delay(300);
-        lineFollowStrips(5, 'b');
+        lineFollowStrips(5, 'b', 170);
         moveServo(FRONT_SERVO, 70);
         delay(500);
 
@@ -138,13 +137,13 @@ void red18()
 
         rigthTurnEncoder(780);
         lineFollowEncoder(400, 'f');
-        lineFollowStrips(4);
+        lineFollowStrips(4, 'f', 170);
         delay(300);
         rigthTurnEncoder(780);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
         delay(300);
-        lineFollowEncoder(350, 'f', 80);
+        lineFollowEncoder(330, 'f', 80);
         delay(100);
         moveServo(LEFT_SERVO, 0);
         delay(500);
@@ -155,7 +154,7 @@ void red18()
     {
         moveServo(BASE_SERVO, BASE_180);
         delay(1000);
-        moveServo(RIGHT_SERVO, 20);
+        moveServo(RIGHT_SERVO, 35);
         delay(500);
         lineFollowEncoder(400);
         lineFollowStrips(1, 'f');
@@ -167,7 +166,7 @@ void red18()
         sendCommand("FL RT OPEN");
         delay(300);
 
-        lineFollowStrips(5, 'b');
+        lineFollowStrips(5, 'b', 170);
         moveServo(RIGHT_SERVO, 70);
         delay(500);
         lineFollowEncoder(400, 'b');
@@ -181,14 +180,14 @@ void red18()
         rigthTurnEncoder(780);
         lineFollowEncoder(400, 'f');
 
-        moveServo(BASE_SERVO, BASE_090 - 2);
-        lineFollowStrips(4);
+        moveServo(BASE_SERVO, BASE_090);
+        lineFollowStrips(4, 'f', 170);
         delay(300);
         rigthTurnEncoder(780);
         lineFollowEncoder(400, 'f');
         lineFollowStrips(1, 'f');
         delay(300);
-        lineFollowEncoder(350, 'f', 80);
+        lineFollowEncoder(330, 'f', 80);
         delay(100);
         moveServo(FRONT_SERVO, 0);
         delay(500);
@@ -199,7 +198,7 @@ void red18()
     lineFollowStrips(2, 'b');
     delay(300);
     leftTurnEncoder(780);
-    lineFollowEncoder(1800);
+    lineFollowEncoder(1800, 'f', 255);
 }
 
 #endif

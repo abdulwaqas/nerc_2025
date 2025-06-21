@@ -234,7 +234,7 @@ void redStart()
     delay(200);
     leftTurnEncoder(780);
 
-    // red1();
+    // red2();
     // while (true)
     //     ;
 
@@ -397,8 +397,9 @@ void setup()
     // rigthTurnEncoder(780);
     // leftTurnEncoder(780);
 
-    // blueStart();
-    redStart();
+    // forward();
+    blueStart();
+    // redStart();
 }
 
 void loop()
@@ -414,6 +415,6 @@ void loop()
     // lineFollowV2('f'); // 'f' for front, 'b' for back, 'l' for left, 'r' for right
     // readMapSingleSensor(MAP_PINS[0]);
     // checkMap();
-    Serial.println(readMapRed());
+    Serial.println(readMapBlue());
     delay(500);
 }

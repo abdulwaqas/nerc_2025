@@ -55,6 +55,18 @@ uint8_t readMapBlue()
         }
     }
 
+    int temp = map[0][0];
+    map[0][0] = map[0][2];
+    map[0][2] = temp;
+
+    temp = map[1][0];
+    map[1][0] = map[1][2];
+    map[1][2] = temp;
+
+    temp = map[2][0];
+    map[2][0] = map[2][2];
+    map[2][2] = temp;
+
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -71,7 +83,7 @@ uint8_t readMapBlue()
     {
         return 0;
     }
-    else if (count > 8)
+    else if (count > 3)
     {
         return 0;
     }
@@ -118,7 +130,7 @@ uint8_t readMapBlue()
         // 1 0 1
         return 6;
     }
-    else if (map[0][0] && map[0][1] && map[0][2])
+    else if (map[0][0] && map[0][2] && map[2][1])
     {
         // 1 0 1
         // 0 0 0
@@ -153,7 +165,7 @@ uint8_t readMapBlue()
         // 0 0 1
         return 11;
     }
-    else if (map[0][0] && map[2][0] && map[2][2])
+    else if (map[0][2] && map[2][0] && map[2][2])
     {
         // 1 0 0
         // 0 0 0
@@ -255,7 +267,7 @@ uint8_t readMapRed()
     {
         return 0;
     }
-    else if (count > 8)
+    else if (count > 3)
     {
         return 0;
     }
@@ -302,7 +314,7 @@ uint8_t readMapRed()
         // 1 0 1
         return 6;
     }
-    else if (map[0][0] && map[0][1] && map[0][2])
+    else if (map[0][0] && map[0][2] && map[2][1])
     {
         // 1 0 1
         // 0 0 0
@@ -337,7 +349,7 @@ uint8_t readMapRed()
         // 0 0 1
         return 11;
     }
-    else if (map[0][0] && map[2][0] && map[2][2])
+    else if (map[0][2] && map[2][0] && map[2][2])
     {
         // 1 0 0
         // 0 0 0
