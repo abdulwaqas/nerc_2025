@@ -53,10 +53,10 @@ void blueStart()
     forwardStrips(2);
     delay(500);
 
-    int map = readMapBlue();
+    int combination = readMapBlue();
 
     // stop the code if nothing is read
-    if (map == 0)
+    if (combination == 0)
     {
         while (true)
         {
@@ -68,140 +68,140 @@ void blueStart()
     delay(200);
     leftTurnEncoder(770);
 
-    if (map == 1)
+    if (combination == 1)
     {
         // 0 0 1
         // 0 1 0
         // 1 0 0
         blue1();
     }
-    else if (map == 2)
+    else if (combination == 2)
     {
         // 1 1 1
         // 0 0 0
         // 0 0 0
         blue2();
     }
-    else if (map == 3)
+    else if (combination == 3)
     {
         // 0 0 0
         // 1 1 1
         // 0 0 0
         blue3();
     }
-    else if (map == 4)
+    else if (combination == 4)
     {
         // 0 1 0
         // 0 1 1
         // 0 0 0
         blue4();
     }
-    else if (map == 5)
+    else if (combination == 5)
     {
         // 0 1 0
         // 1 1 0
         // 0 0 0
         blue5();
     }
-    else if (map == 6)
+    else if (combination == 6)
     {
         // 0 1 0
         // 0 0 0
         // 1 0 1
         blue6();
     }
-    else if (map == 7)
+    else if (combination == 7)
     {
         // 1 0 1
         // 0 0 0
         // 0 1 0
         blue7();
     }
-    else if (map == 8)
+    else if (combination == 8)
     {
         // 1 0 0
         // 0 1 0
         // 0 0 1
         blue8();
     }
-    else if (map == 9)
+    else if (combination == 9)
     {
         // 0 1 0
         // 1 0 1
         // 0 0 0
         blue9();
     }
-    else if (map == 10)
+    else if (combination == 10)
     {
         // 0 0 0
         // 0 1 0
         // 1 0 1
         blue10();
     }
-    else if (map == 11)
+    else if (combination == 11)
     {
         // 1 0 1
         // 0 0 0
         // 0 0 1
         blue11();
     }
-    else if (map == 12)
+    else if (combination == 12)
     {
         // 1 0 0
         // 0 0 0
         // 1 0 1
         blue12();
     }
-    else if (map == 13)
+    else if (combination == 13)
     {
         // 0 1 0
         // 0 1 0
         // 0 0 1
         blue13();
     }
-    else if (map == 14)
+    else if (combination == 14)
     {
         // 0 1 0
         // 0 1 0
         // 1 0 0
         blue14();
     }
-    else if (map == 15)
+    else if (combination == 15)
     {
         // 1 0 0
         // 0 0 1
         // 1 0 0
         blue15();
     }
-    else if (map == 16)
+    else if (combination == 16)
     {
         // 0 0 1
         // 1 0 0
         // 0 0 1
         blue16();
     }
-    else if (map == 17)
+    else if (combination == 17)
     {
         // 0 0 1
         // 0 1 0
         // 0 0 1
         blue17();
     }
-    else if (map == 18)
+    else if (combination == 18)
     {
         // 1 0 0
         // 0 1 0
         // 1 0 0
         blue18();
     }
-    else if (map == 19)
+    else if (combination == 19)
     {
         // 0 0 1
         // 0 1 0
         // 0 1 0
         blue19();
     }
-    else if (map == 20)
+    else if (combination == 20)
     {
         // 1 0 0
         // 0 1 0
@@ -215,10 +215,10 @@ void redStart()
     backwardStrips(2);
     delay(800);
 
-    int map = readMapRed();
+    int combination = readMapRed();
 
     // stop the code if nothing is read
-    if (map == 0)
+    if (combination == 0)
     {
         while (true)
         {
@@ -232,140 +232,140 @@ void redStart()
 
     // red is mirror of blue
     // the following patterns have not been mirrored
-    if (map == 1)
+    if (combination == 1)
     {
         // 0 0 1
         // 0 1 0
         // 1 0 0
         red1();
     }
-    else if (map == 2)
+    else if (combination == 2)
     {
         // 1 1 1
         // 0 0 0
         // 0 0 0
         red2();
     }
-    else if (map == 3)
+    else if (combination == 3)
     {
         // 0 0 0
         // 1 1 1
         // 0 0 0
         red3();
     }
-    else if (map == 4)
+    else if (combination == 4)
     {
         // 0 1 0
         // 0 1 1
         // 0 0 0
         red4();
     }
-    else if (map == 5)
+    else if (combination == 5)
     {
         // 0 1 0
         // 1 1 0
         // 0 0 0
         red5();
     }
-    else if (map == 6)
+    else if (combination == 6)
     {
         // 0 1 0
         // 0 0 0
         // 1 0 1
         red6();
     }
-    else if (map == 7)
+    else if (combination == 7)
     {
         // 1 0 1
         // 0 0 0
         // 0 1 0
         red7();
     }
-    else if (map == 8)
+    else if (combination == 8)
     {
         // 1 0 0
         // 0 1 0
         // 0 0 1
         red8();
     }
-    else if (map == 9)
+    else if (combination == 9)
     {
         // 0 1 0
         // 1 0 1
         // 0 0 0
         red9();
     }
-    else if (map == 10)
+    else if (combination == 10)
     {
         // 0 0 0
         // 0 1 0
         // 1 0 1
         red10();
     }
-    else if (map == 11)
+    else if (combination == 11)
     {
         // 1 0 1
         // 0 0 0
         // 0 0 1
         red11();
     }
-    else if (map == 12)
+    else if (combination == 12)
     {
         // 1 0 0
         // 0 0 0
         // 1 0 1
         red12();
     }
-    else if (map == 13)
+    else if (combination == 13)
     {
         // 0 1 0
         // 0 1 0
         // 0 0 1
         red13();
     }
-    else if (map == 14)
+    else if (combination == 14)
     {
         // 0 1 0
         // 0 1 0
         // 1 0 0
         red14();
     }
-    else if (map == 15)
+    else if (combination == 15)
     {
         // 1 0 0
         // 0 0 1
         // 1 0 0
         red15();
     }
-    else if (map == 16)
+    else if (combination == 16)
     {
         // 0 0 1
         // 1 0 0
         // 0 0 1
         red16();
     }
-    else if (map == 17)
+    else if (combination == 17)
     {
         // 0 0 1
         // 0 1 0
         // 0 0 1
         red17();
     }
-    else if (map == 18)
+    else if (combination == 18)
     {
         // 1 0 0
         // 0 1 0
         // 1 0 0
         red18();
     }
-    else if (map == 19)
+    else if (combination == 19)
     {
         // 0 0 1
         // 0 1 0
         // 0 1 0
         red19();
     }
-    else if (map == 20)
+    else if (combination == 20)
     {
         // 1 0 0
         // 0 1 0
@@ -385,6 +385,23 @@ void setup()
 
     Serial.println("Code Running...");
 
+// if you have an arena button connected then use this
+// #define ARENA_BUTTON 13
+#ifdef ARENA_BUTTON
+    pinMode(ARENA_BUTTON, INPUT_PULLUP);
+
+    if (digitalRead(ARENA_BUTTON) == LOW)
+    {
+        blueStart();
+    }
+    else
+    {
+        redStart();
+    }
+#endif // ARENA_BUTTON
+
+    // if you don't have arena button then uncomment the desired arena 
+    // and comment the other one
     blueStart();
     // redStart();
 }

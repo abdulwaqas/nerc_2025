@@ -16,7 +16,7 @@ long integral = 0; // Accumulated error
 void lineFollow(char direction = 'f', int speed = 150)
 {
     // black -> 1, white -> 0
-    bool l = 0, m = 0, r = 0;
+    bool l, m, r;
 
     if (direction == 'f')
     {
@@ -148,7 +148,7 @@ void lineFollow(char direction = 'f', int speed = 150)
 void lineFollowV3(char direction = 'f', int speed = 150)
 {
     // black -> 1, white -> 0
-    bool l = 0, m = 0, r = 0;
+    bool l, m, r;
 
     if (direction == 'f')
     {
@@ -292,7 +292,7 @@ void lineFollowV3(char direction = 'f', int speed = 150)
 void lineFollowV2(char direction = 'f', int speed = 150)
 {
     // black -> 1, white -> 0
-    bool l = 0, m = 0, r = 0;
+    bool l, m, r;
 
     if (direction == 'f')
     {

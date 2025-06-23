@@ -35,7 +35,7 @@ void initMotors()
     pinMode(RR.rev_pin, OUTPUT);
 }
 
-void moveOneMotor(Motor &motor, int speed)
+void moveOneMotor(const Motor &motor, int speed)
 {
     analogWrite(motor.fwd_pin, speed);
     analogWrite(motor.rev_pin, 0);
