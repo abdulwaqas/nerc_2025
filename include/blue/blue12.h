@@ -1,3 +1,4 @@
+#pragma once
 // 1 0 0
 // 0 0 0
 // 1 0 1
@@ -25,7 +26,7 @@ void blue12()
     delay(500);
 
     moveServo(BASE_SERVO, BASE_090);
-    delay(1000);
+    delay(800);
     sendCommand("FL FT OPEN");
     moveServo(FRONT_SERVO, 0);
     delay(500);
@@ -39,13 +40,13 @@ void blue12()
     delay(500);
 
     moveServo(BASE_SERVO, BASE_180);
-    delay(1000);
+    delay(800);
     sendCommand("FL RT OPEN");
     moveServo(RIGHT_SERVO, 0);
     delay(500);
     lineFollowStrips(1, 'f');
     delay(300);
-    rigthTurnEncoder(780);
+    rightTurnEncoder(780);
     lineFollowEncoder(400);
     lineFollowStrips(1, 'f');
     delay(500);
@@ -70,7 +71,7 @@ void blue12()
     if (redServo == RedServo::SERVO_LEFT)
     {
         moveServo(BASE_SERVO, BASE_000);
-        delay(1000);
+        delay(800);
         lineFollowEncoder(400, 'f');
         moveServo(LEFT_SERVO, 23);
         lineFollowStrips(2, 'f');
@@ -110,7 +111,7 @@ void blue12()
     else if (redServo == RedServo::SERVO_CENT)
     {
         moveServo(BASE_SERVO, BASE_090);
-        delay(1000);
+        delay(800);
         moveServo(FRONT_SERVO, 23);
         delay(500);
         lineFollowEncoder(400, 'f');
@@ -125,7 +126,7 @@ void blue12()
         delay(500);
 
         moveServo(BASE_SERVO, BASE_000);
-        delay(1000);
+        delay(800);
         lineFollowEncoder(400, 'b');
         moveServo(RIGHT_SERVO, 40);
         delay(500);
@@ -192,7 +193,7 @@ void blue12()
 
     lineFollowStrips(2, 'b');
     delay(300);
-    rigthTurnEncoder(780);
+    rightTurnEncoder(780);
     lineFollowEncoder(1900, 'f', 255);
 }
 

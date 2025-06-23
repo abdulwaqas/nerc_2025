@@ -257,7 +257,7 @@ void leftTurnEncoder(uint32_t ticksToMove)
     halt();
 }
 
-void rigthTurnEncoder(uint32_t ticksToMove)
+void rightTurnEncoder(uint32_t ticksToMove)
 {
     flEncoder.ticks = 0;
     while (flEncoder.ticks < ticksToMove)

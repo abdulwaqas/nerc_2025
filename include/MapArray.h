@@ -55,6 +55,7 @@ uint8_t readMapBlue()
         }
     }
 
+    // swap first and third column
     int temp = map[0][0];
     map[0][0] = map[0][2];
     map[0][2] = temp;
@@ -76,7 +77,6 @@ uint8_t readMapBlue()
         }
         Serial.println();
     }
-
     Serial.println();
 
     if (count < 3)
@@ -260,7 +260,6 @@ uint8_t readMapRed()
         }
         Serial.println();
     }
-
     Serial.println();
 
     if (count < 3)

@@ -1,3 +1,4 @@
+#pragma once
 // 0 1 0
 // 1 0 1
 // 0 0 0
@@ -25,7 +26,7 @@ void blue9()
     delay(500);
 
     moveServo(BASE_SERVO, BASE_090);
-    delay(1000);
+    delay(800);
     sendCommand("FL FT OPEN");
     moveServo(FRONT_SERVO, 0);
     delay(500);
@@ -43,7 +44,7 @@ void blue9()
     delay(600);
     moveServo(RIGHT_SERVO, 0);
     delay(300);
-    rigthTurnEncoder(780);
+    rightTurnEncoder(780);
     delay(300);
     lineFollowEncoder(330, 'f', 80);
     delay(100);
@@ -65,7 +66,7 @@ void blue9()
     if (redServo == RedServo::SERVO_LEFT)
     {
         moveServo(BASE_SERVO, BASE_000);
-        delay(1000);
+        delay(800);
         moveServo(LEFT_SERVO, 23);
         delay(500);
         lineFollowEncoder(400, 'f');
@@ -106,7 +107,7 @@ void blue9()
     else if (redServo == RedServo::SERVO_CENT)
     {
         moveServo(BASE_SERVO, BASE_090);
-        delay(1000);
+        delay(800);
         moveServo(FRONT_SERVO, 23);
         delay(500);
         lineFollowEncoder(400, 'f');
@@ -121,7 +122,7 @@ void blue9()
         delay(500);
 
         moveServo(BASE_SERVO, BASE_000);
-        delay(1000);
+        delay(800);
         lineFollowEncoder(400, 'b');
         moveServo(RIGHT_SERVO, 40);
         delay(500);
@@ -188,7 +189,7 @@ void blue9()
 
     lineFollowStrips(2, 'b');
     delay(300);
-    rigthTurnEncoder(780);
+    rightTurnEncoder(780);
     lineFollowEncoder(1900, 'f', 255);
 }
 #endif //_BLUE9_H_

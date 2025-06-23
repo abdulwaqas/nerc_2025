@@ -7,6 +7,7 @@
 #include <Wire.h>
 
 #define I2C_SLAVE 4
+#define I2C_DATA_SIZE 4
 
 #define BASE_000 10  // LEFT AT FRONT
 #define BASE_090 70  // CENTER AT FRONT
@@ -39,7 +40,8 @@ void sendCommand(String cmd)
 
 RedServo getRedServo()
 {
-    Wire.requestFrom(I2C_SLAVE, 4); // request 6 bytes from slave device #8
+    Wire.requestFrom(I2C_SLAVE, I2C_DATA_SIZE); // request 6 bytes from slave device #8
+
     String data = "";
     while (Wire.available())
     {                         // slave may send less than requested

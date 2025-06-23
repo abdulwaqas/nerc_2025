@@ -48,8 +48,6 @@
 #include "red/red19.h"
 #include "red/red20.h"
 
-// TODO: update rightTurnEncoder function name after NERC
-
 void blueStart()
 {
     forwardStrips(2);
@@ -57,6 +55,7 @@ void blueStart()
 
     int map = readMapBlue();
 
+    // stop the code if nothing is read
     if (map == 0)
     {
         while (true)
@@ -68,10 +67,6 @@ void blueStart()
     lineFollowStrips(2, 'f');
     delay(200);
     leftTurnEncoder(770);
-
-    // blue1();
-    // while (true)
-    //     ;
 
     if (map == 1)
     {
@@ -218,10 +213,11 @@ void blueStart()
 void redStart()
 {
     backwardStrips(2);
-    delay(1000);
+    delay(800);
 
     int map = readMapRed();
 
+    // stop the code if nothing is read
     if (map == 0)
     {
         while (true)
@@ -234,10 +230,8 @@ void redStart()
     delay(200);
     leftTurnEncoder(780);
 
-    // red2();
-    // while (true)
-    //     ;
-
+    // red is mirror of blue
+    // the following patterns have not been mirrored
     if (map == 1)
     {
         // 0 0 1
@@ -390,31 +384,18 @@ void setup()
     initMapArray();
 
     Serial.println("Code Running...");
-    // moveServo(FRONT_SERVO, 0);
-    // moveServo(LEFT_SERVO, 0);
-    // moveServo(RIGHT_SERVO, 0);
 
-    // rigthTurnEncoder(780);
-    // leftTurnEncoder(780);
-
-    // forward();
     blueStart();
     // redStart();
 }
 
 void loop()
 {
-    // lineFollowV3('r', 120);
-    // sendCommand("FL LT OPEN");
-    // delay(1000);
-    // sendCommand("FL LT CLOSE");
-    // delay(1000);
     // printSensorVals(frontSensors);
     // printEncoders();
-    // lineFollow('f'); // 'f' for front, 'b' for back, 'l' for left, 'r' for right
-    // lineFollowV2('f'); // 'f' for front, 'b' for back, 'l' for left, 'r' for right
     // readMapSingleSensor(MAP_PINS[0]);
     // checkMap();
-    Serial.println(readMapBlue());
-    delay(500);
+    // Serial.println(readMapRed());
+    // Serial.println(readMapBlue());
+    // delay(500);
 }

@@ -14,11 +14,6 @@ const uint8_t backSensors[NUM_SENSORS] = {A0, A1, A2};
 const uint8_t leftSensors[NUM_SENSORS] = {A3, A4, A5};
 const uint8_t rightSensors[NUM_SENSORS] = {A14, A13, A15};
 
-// #define FRONT_SENSOR A10
-// #define BACK_SENSOR A11
-// #define LEFT_SENSOR A8
-// #define RIGHT_SENSOR A9
-
 void setupSensorPins(const uint8_t pins[])
 {
     for (size_t i = 0; i < NUM_SENSORS; i++)
